@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.junit.runners.Parameterized;
@@ -13,9 +14,15 @@ import org.junit.runners.Parameterized;
 import com.epam.cdp.m2.hw2.aggregator.Aggregator;
 
 import javafx.util.Pair;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 public abstract class JavaAggregatorFrequencyTest {
-
     @Parameterized.Parameter(0)
     public long limit;
 
@@ -44,7 +51,11 @@ public abstract class JavaAggregatorFrequencyTest {
 
     @Test
     public void test() {
+        long start = System.nanoTime();
         List<Pair<String, Long>> actual = aggregator.getMostFrequentWords(words, limit);
+        long end = System.nanoTime();
         assertEquals(expected, actual);
+        System.out.println("Frequency RunTime : "+(end-start));
+
     }
 }

@@ -1,0 +1,21 @@
+
+M
+java:S3740Î"/Provide the parametrized type for this generic.(¼£Æ×8º¼ÂÀ0
+M
+java:S3740Î"/Provide the parametrized type for this generic.(¼£Æ×8Ã¼ÂÀ0
+7
+java:S1948"!Make "list" private or transient.(ßŸç
+E
+java:S1659X"(Declare "sortedList" on a separate line.(âü‹Ô8Œî²À0
+F
+java:S1659¤"(Declare "sortedList" on a separate line.(âü‹Ô8ä¼ÂÀ0
+c
+java:S1128"ARemove this unused import 'java.util.concurrent.RecursiveAction'.( Ú¼ıÿÿÿÿÿ8ú³ÁÁ0
+K
+java:S1068X".Remove this unused "sortedList" private field.(âü‹Ô8—î²À0
+L
+java:S1068¤".Remove this unused "sortedList" private field.(âü‹Ô8ê¼ÂÀ0
+J
+java:S1604C"(Make this anonymous inner class a lambda(­Û‚øÿÿÿÿ8…ã¤À0
+K
+java:S1604"(Make this anonymous inner class a lambda(­Û‚øÿÿÿÿ8ì¼ÂÀ0

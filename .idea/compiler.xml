@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cdp.learn.java8" />
+        <module name="LearnJava8" />
       </profile>
     </annotationProcessing>
   </component>

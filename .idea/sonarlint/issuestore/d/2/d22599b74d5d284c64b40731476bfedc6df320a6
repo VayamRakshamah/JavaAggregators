@@ -1,0 +1,12 @@
+
+N
+java:S1128"8Remove this unused import 'java.util.function.Function'.(»³Íž
+S
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(çêˆã
+k	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¹éØúÿÿÿÿ
+=
+java:S1604 "(Make this anonymous inner class a lambda(ÙàP
+>
+java:S1604C"(Make this anonymous inner class a lambda(ƒ¹öÀ

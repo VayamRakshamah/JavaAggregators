@@ -143,7 +143,13 @@ public class Java7ParallelAggregator implements Aggregator{
             @Override
             public int compare(Map.Entry<String, Long> o1,
                                Map.Entry<String, Long> o2) {
-                return o1.getValue().compareTo(o2.getValue());
+                if(o1.getKey().length()>o2.getKey().length()){
+                    return 1;
+                }
+                else if(o1.getKey().length()< o2.getKey().length()){
+                    return -1;
+                }
+                return o1.getKey().compareTo(o2.getKey());
             }
         });
 

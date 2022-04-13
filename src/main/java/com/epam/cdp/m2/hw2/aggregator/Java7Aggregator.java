@@ -70,6 +70,10 @@ public class Java7Aggregator implements Aggregator {
                 if(o1.length()>o2.length()){
                     return 1;
                 }
+                // sort line updated
+                else if(o1.length()<o2.length()){
+                    return -1;
+                }
                 else{
                     return o1.compareTo(o2);
                 }

@@ -6,14 +6,21 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.junit.runners.Parameterized;
 
 import com.epam.cdp.m2.hw2.aggregator.Aggregator;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 public abstract class JavaAggregatorSumTest {
-
     @Parameterized.Parameter(0)
     public List<Integer> numbers;
 
@@ -37,7 +44,10 @@ public abstract class JavaAggregatorSumTest {
 
     @Test
     public void test() {
+        long start = System.nanoTime();
         int actual = aggregator.sum(numbers);
+        long end = System.nanoTime();
         assertEquals(expected, actual);
+        System.out.println("Sum RunTime : "+(end-start));
     }
 }
