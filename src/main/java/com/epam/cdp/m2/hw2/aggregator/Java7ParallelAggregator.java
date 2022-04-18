@@ -137,19 +137,12 @@ public class Java7ParallelAggregator implements Aggregator{
         long counter = 0;
         ForkJoinPool pool = new ForkJoinPool(numThreads);
         Map<String, Long> entryMap = pool.invoke(new DuplicateTask(words, words.size() / numThreads));
-
         List<Map.Entry<String, Long>> entryList = new LinkedList<>(entryMap.entrySet());
         Collections.sort(entryList, new Comparator<Map.Entry<String, Long>>() {
             @Override
             public int compare(Map.Entry<String, Long> o1,
                                Map.Entry<String, Long> o2) {
-                if(o1.getKey().length()>o2.getKey().length()){
-                    return 1;
-                }
-                else if(o1.getKey().length()< o2.getKey().length()){
-                    return -1;
-                }
-                return o1.getKey().compareTo(o2.getKey());
+                return o1.getValue().compareTo(o2.getValue());
             }
         });
 
@@ -188,7 +181,8 @@ public class Java7ParallelAggregator implements Aggregator{
                 DuplicateTask p1 = new DuplicateTask(forkList.subList(0, mid), threshold);
                 p1.fork();
                 DuplicateTask p2 = new DuplicateTask(forkList.subList(mid, size), threshold);
-                resultMap = mergeTree(p1.join(), p2.compute());
+                resultMap = mergeTree(p2.compute(), p1.join());
+
             }
             return resultMap;
         }
@@ -217,7 +211,5 @@ public class Java7ParallelAggregator implements Aggregator{
             }
             return lengthMap;
         }
-
     }
-
 }
